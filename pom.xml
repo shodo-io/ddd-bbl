@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <modules>
-        <module>shop-domain</module>
-        <module>shop-app</module>
+        <module>words-domain</module>
+        <module>words-app</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -14,10 +14,10 @@
     </parent>
 
     <groupId>io.shodo.ddd.bbl</groupId>
-    <artifactId>shop</artifactId>
+    <artifactId>words</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>shop</name>
+    <name>words</name>
     <description>Demo project for DDD BBL</description>
 
     <properties>
