@@ -1,6 +1,5 @@
 package io.shodo.ddd.bbl.words.application.resource;
 
-import io.shodo.ddd.bbl.words.domain.services.WordService;
 import io.shodo.ddd.bbl.words.infrastructure.dto.CombinationDTO;
 import io.shodo.ddd.bbl.words.infrastructure.dto.WordDTO;
 import io.shodo.ddd.bbl.words.infrastructure.repository.WordRepository;
@@ -17,16 +16,13 @@ import java.util.List;
 public class WordsResource {
 
     private WordRepository wordRepository;
-    private WordService wordService;
 
-    public WordsResource(WordRepository wordRepository, WordService wordService) {
+    public WordsResource(WordRepository wordRepository) {
         this.wordRepository = wordRepository;
-        this.wordService = wordService;
     }
 
     @GetMapping("/words")
     public ResponseEntity<List<WordDTO>> findAll() {
-        wordService.test();
         return ResponseEntity.ok(wordRepository.findAll());
     }
 
