@@ -1,6 +1,6 @@
 package io.shodo.ddd.bbl.words.application.resource;
 
-import io.shodo.ddd.bbl.words.application.resource.dto.CombinationDTO;
+import io.shodo.ddd.bbl.words.application.dto.CombinationDTO;
 import io.shodo.ddd.bbl.words.application.dto.SentenceDTO;
 import io.shodo.ddd.bbl.words.application.dto.WordDTO;
 import io.shodo.ddd.bbl.words.infrastructure.repository.WordRepository;
