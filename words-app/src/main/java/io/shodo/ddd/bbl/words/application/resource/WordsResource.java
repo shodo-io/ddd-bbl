@@ -26,6 +26,11 @@ public class WordsResource {
         return ResponseEntity.ok(wordRepository.findAll());
     }
 
+    @GetMapping("/words")
+    public ResponseEntity<List<WordDTO>> findByWordTitle(@PathParam("word") String word) {
+        return ResponseEntity.notFound().build();
+    }
+
     @GetMapping("/words/starts-with")
     public ResponseEntity<List<WordDTO>> findAllStartsWith(@PathParam("starts") String letter) {
         return ResponseEntity.notFound().build();
@@ -52,8 +57,26 @@ public class WordsResource {
     /**
      * TODO: Except saved CombinationDTO
      */
+    @GetMapping("/words/random-combinations-containing-word")
+    public ResponseEntity<List<CombinationDTO>> generateRandomCombinationsContainingFirstWord(@PathParam("combinations-limit") int limit,
+                                                                           @PathParam("first-word") String firstWord) {
+        return ResponseEntity.notFound().build();
+    }
+
+    /**
+     * TODO: Except saved CombinationDTO
+     */
     @GetMapping("/words/random-combination")
     public ResponseEntity<List<CombinationDTO>> generateRandomCombination(@PathParam("words-limit") int limit) {
+        return ResponseEntity.notFound().build();
+    }
+
+    /**
+     * TODO: Except saved CombinationDTO
+     */
+    @GetMapping("/words/random-combination")
+    public ResponseEntity<List<CombinationDTO>> generateRandomCombinationsContainingWord(@PathParam("words-limit") int limit,
+                                                                                         @PathParam("first-word") String firstWord) {
         return ResponseEntity.notFound().build();
     }
 
