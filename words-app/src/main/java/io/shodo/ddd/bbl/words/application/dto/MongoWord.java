@@ -7,8 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 
-@Document(collection = WordDTO.MONGO_COLLECTION_NAME)
-public class WordDTO implements Serializable {
+@Document(collection = MongoWord.MONGO_COLLECTION_NAME)
+public class MongoWord implements Serializable {
 
     public static final String MONGO_COLLECTION_NAME = "words";
     public static final String MONGO_FIELD_CONTENT = "content";

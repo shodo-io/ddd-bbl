@@ -2,7 +2,7 @@ package io.shodo.ddd.bbl.words.infrastructure.dbmigrations;
 
 import com.github.mongobee.changeset.ChangeLog;
 import com.github.mongobee.changeset.ChangeSet;
-import io.shodo.ddd.bbl.words.application.dto.WordDTO;
+import io.shodo.ddd.bbl.words.application.dto.MongoWord;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 import java.io.IOException;
@@ -24,17 +24,17 @@ public class ChangeSet001Words {
     public void addProducts(MongoTemplate mongoTemplate) throws IOException, URISyntaxException {
         final URI uri = getClass().getClassLoader().getResource("words.txt").toURI();
         try (Stream<String> stream = Files.lines(Paths.get(uri))) {
-            List<WordDTO> words = new ArrayList<>();
+            List<MongoWord> words = new ArrayList<>();
             List<String> fileWords = stream.collect(Collectors.toList());
             for(int i = 0; i < fileWords.size(); i++) {
-                final WordDTO wordDTO = new WordDTO();
-                wordDTO.setId(String.valueOf(i));
-                wordDTO.setContent(fileWords.get(i));
-                wordDTO.setCreationDate(ZonedDateTime.of(1970, 1, 1, 0, 0,
+                final MongoWord mongoWord = new MongoWord();
+                mongoWord.setId(String.valueOf(i));
+                mongoWord.setContent(fileWords.get(i));
+                mongoWord.setCreationDate(ZonedDateTime.of(1970, 1, 1, 0, 0,
                         0, 0, ZoneId.systemDefault()).plusDays(i));
-                words.add(wordDTO);
+                words.add(mongoWord);
             };
-            mongoTemplate.insert(words, WordDTO.MONGO_COLLECTION_NAME);
+            mongoTemplate.insert(words, MongoWord.MONGO_COLLECTION_NAME);
         }
     }
 }
