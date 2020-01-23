@@ -1,4 +1,4 @@
-package io.shodo.ddd.bbl.words.infrastructure.dto;
+package io.shodo.ddd.bbl.words.application.dto;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;

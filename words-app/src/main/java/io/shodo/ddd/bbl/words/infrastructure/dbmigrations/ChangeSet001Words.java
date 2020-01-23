@@ -2,7 +2,7 @@ package io.shodo.ddd.bbl.words.infrastructure.dbmigrations;
 
 import com.github.mongobee.changeset.ChangeLog;
 import com.github.mongobee.changeset.ChangeSet;
-import io.shodo.ddd.bbl.words.infrastructure.dto.WordDTO;
+import io.shodo.ddd.bbl.words.application.dto.WordDTO;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 import java.io.IOException;

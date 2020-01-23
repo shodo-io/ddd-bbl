@@ -1,7 +1,8 @@
 package io.shodo.ddd.bbl.words.application.resource;
 
-import io.shodo.ddd.bbl.words.infrastructure.dto.CombinationDTO;
-import io.shodo.ddd.bbl.words.infrastructure.dto.WordDTO;
+import io.shodo.ddd.bbl.words.application.resource.dto.CombinationDTO;
+import io.shodo.ddd.bbl.words.application.dto.SentenceDTO;
+import io.shodo.ddd.bbl.words.application.dto.WordDTO;
 import io.shodo.ddd.bbl.words.infrastructure.repository.WordRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -85,7 +86,7 @@ public class WordsResource {
      */
     @PostMapping("/combination")
     public ResponseEntity<CombinationDTO> saveCombination(@RequestBody CombinationDTO combination) {
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.notFound().build();
     }
 
     /**
@@ -93,6 +94,11 @@ public class WordsResource {
      */
     @PostMapping("/combinations")
     public ResponseEntity<List<CombinationDTO>> saveCombinations(@RequestBody List<CombinationDTO> combinations) {
-        return ResponseEntity.badRequest().build();
+        return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/sentences")
+    public ResponseEntity<List<SentenceDTO>> findAllSentences() {
+        return ResponseEntity.notFound().build();
     }
 }
